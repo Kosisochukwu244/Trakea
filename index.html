@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trakea</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--  dark mode toggle -->
+    <div class="header">
+      <h3>Trakea</h3>
+      <button id="theme-toggle" class="icon-btn" title="Toggle Dark Mode">
+        🌙
+      </button>
+    </div>
+
+    <!--  search/Filter bar -->
+    <input type="text" id="search-input" placeholder="🔍 Search leads..." />
+
+    <input type="text" id="input-el" placeholder="Enter URL or lead..." />
+
+    <!-- category selector -->
+    <select id="category-select">
+      <option value="">No Category</option>
+      <option value="work">Work</option>
+      <option value="personal">Personal</option>
+      <option value="shopping">Shopping</option>
+      <option value="learning">Learning</option>
+      <option value="other">Other</option>
+    </select>
+
+    <button id="input-btn">Save Input</button>
+    <button id="tab-btn">Save Tab</button>
+
+    <!--  export button -->
+    <button id="export-btn">Export</button>
+
+    <button id="delete-btn">Delete All</button>
+
+    <!-- category filter buttons -->
+    <div id="category-filters" class="category-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="work">Work</button>
+      <button class="filter-btn" data-category="personal">Personal</button>
+      <button class="filter-btn" data-category="shopping">Shopping</button>
+      <button class="filter-btn" data-category="learning">Learning</button>
+      <button class="filter-btn" data-category="other">Other</button>
+    </div>
+
+    <!-- undo delete notification -->
+    <div id="undo-notification" class="undo-notification hidden">
+      <span>All leads deleted</span>
+      <button id="undo-btn">Undo</button>
+    </div>
+
+    <div class="leads-cont">
+      <ul id="ul-el"></ul>
+    </div>
+    <!-- edit Modal -->
+    <div id="edit-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Edit Lead</h3>
+        <label>Title:</label>
+        <input type="text" id="edit-title" placeholder="Enter custom title" />
+        <label>URL:</label>
+        <input type="text" id="edit-url" placeholder="Enter URL" />
+        <label>Notes:</label>
+        <textarea
+          id="edit-notes"
+          placeholder="Add notes about this lead..."
+        ></textarea>
+        <label>Category:</label>
+        <select id="edit-category">
+          <option value="">No Category</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="shopping">Shopping</option>
+          <option value="learning">Learning</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="modal-buttons">
+          <button id="save-edit-btn">Save</button>
+          <button id="cancel-edit-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
